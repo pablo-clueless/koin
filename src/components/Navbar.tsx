@@ -1,4 +1,4 @@
-import { List } from '@phosphor-icons/react'
+import { List, X } from '@phosphor-icons/react'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -25,7 +25,20 @@ const Navbar = () => {
   return (
     <>
     {isMenuOpen && (
-      <div onClick={() => setIsMenuOpen(false)} className='w-screen h-screen flex flex-col bg-white fixed top-0 left-0 !z-30'></div>
+      <div className='w-screen h-screen flex flex-col sm:hidden items-center bg-white fixed top-0 left-0 !z-30 px-4 py-10'>
+        <div className='w-full flex items-center justify-end'>
+          <button onClick={() => setIsMenuOpen(false)}>
+            <X className='text-3xl' />
+          </button>
+        </div>
+        <div className='w-full flex flex-col items-center gap-4 my-auto'>
+          {NAV_LINKS.map((link, index) => (
+            <a key={index} href={link.target} className='text-xl text-indigo-500 font-medium capitalize' onClick={() => setIsMenuOpen(false)}>
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
     )}
     <nav className={`w-full flex items-center justify-between px-2 md:px-20 py-4 top-0 left-0 !z-20 ${scrolled ? 'fixed bg-gradient-to-r from-indigo-500 to-pink-500' : 'static bg-white'}`}>
       <button onClick={() => setIsMenuOpen(true)} className='flex md:hidden items-center'>
