@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;900&family=MuseoModerno:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+
+	--museo: 'MuseoModerno', sans-serif;
+	--outfit: 'Outfit', sans-serif;
+}
+
+/*  removes scrollbar */
+::-webkit-scrollbar {
+	width: 0px;
+}
+
+/* ::-webkit-scrollbar-thumb {
+	background-color: #CCC;
+	border-radius: 40px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+} */
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: '#fff';
+	font-family: var(--museo);
+	overflow-x: hidden;
+}
+
+input:-webkit-autofill {
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type='file']::-webkit-file-upload-button {
+	display: none;
+}
+
+button {
+	@apply active:scale-[0.98];
+}
+
+/* input:number reset */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+/* removes ms edge password reveal icon */
+::-ms-reveal {
+	display: none;
+}
+
+.nav_link {
+  position: relative;
+}
+
+.nav_link::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav_link:hover::before{
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
