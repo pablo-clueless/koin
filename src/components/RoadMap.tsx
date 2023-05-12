@@ -18,7 +18,7 @@ const RoadMap = ({date, detail, feature, icon, status}:Props) => {
       initial={initial}
       whileInView={animate}
       transition={transition}
-      className='w-full md:w-[500px] flex flex-col items-center bg-white cursor-pointer'
+      className='w-full md:w-[500px] flex flex-col items-center bg-white'
     >
       <div className='w-full flex items-center justify-between px-4 py-5'>
         <div>

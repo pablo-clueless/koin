@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-import { Footer, InfiniteRowScroll, Member, Navbar, OSClient, RoadMap, Tab, TabPanel } from 'components'
-import { OS_CLIENTS, HERO_IMAGES, ROAD_MAP, TEAM_MEMBERS, SPONSORS } from 'constant'
+import { Footer, InfiniteRowScroll, Member, Navbar, Nomics, OSClient, RoadMap, Tab, TabPanel } from 'components'
+import { OS_CLIENTS, HERO_IMAGES, ROAD_MAP, SPONSORS, TEAM_MEMBERS, TOKENOMICS } from 'constant'
 import { Container } from 'layouts'
-import {  } from 'assets'
+import { intro_1 } from 'assets'
 
-const initial = {x: '100%', opacity: 0}
-const animate = {x: 0, opacity: 1, dur: 0.5}
+const initial = {opacity: 0, scale: 0}
+const animate = {opacity: 1, scale: 1, dur: 1}
 const transition = {type: 'spring', stiffness: 80, dumping: 5, restDelta: 0.001}
 
 const Home = () => {
@@ -35,10 +35,10 @@ const Home = () => {
           <p className='text-5xl md:text-8xl text-white font-bold mb-5'>a new era cryptocurrency</p>
           <p className='text-gray-200 text-sm md:text-base'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae repellendus officia eos, quod impedit voluptatibus! Ex consectetur numquam commodi harum, soluta nihil vitae ducimus voluptas facere velit officiis quis neque! Hic repellat laborum fugiat dolores cupiditate fugit? Saepe, minus. Ea totam pariatur et, accusamus at vitae aliquam? Facilis, reiciendis. Nihil nemo maiores, pariatur vero dolore distinctio, numquam sint odio esse quae officia vel reiciendis quo eveniet, ratione sit officiis expedita!</p>
           <div className='w-full flex items-center gap-4 mt-5'>
-            <button className='h-[40px] bg-white text-indigo-500 rounded-md px-4'>
+            <button className='h-[40px] bg-white text-indigo-500 rounded-full px-4'>
               read whitepaper
             </button>
-            <button className='h-[40px] bg-indigo-500 text-white rounded-md px-4'>
+            <button className='h-[40px] bg-indigo-500 text-white rounded-full px-4'>
               view on etherscan
             </button>
           </div>
@@ -61,19 +61,34 @@ const Home = () => {
     <Container className='flex items-center gap-4 overflow-hidden'>
       <InfiniteRowScroll images={SPONSORS} />
     </Container>
-    <Container id='about' className='bg-gray-200'>
-      <section className='w-full flex flex-col items-center py-5'>
-        <p className='text-gray-600 font-bold uppercase'>about</p>
-        <div className='w-full my-10'>
-          <p className='text-xl text-indigo-500 text-center'>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum amet cumque, perspiciatis placeat quis recusandae non aut in perferendis laborum dolore illum deleniti, beatae quidem, fugiat minima eum odio suscipit corrupti et adipisci aperiam modi nobis quaerat. Debitis expedita officia officiis dolorum recusandae numquam voluptates consectetur voluptatibus explicabo consequatur, dicta maiores ad itaque esse quo magni? Quidem, facilis. Quod debitis illum amet expedita atque at et modi totam perspiciatis vero odio cumque quas quia necessitatibus, optio ea dicta laudantium voluptate nostrum, ut laborum. At impedit ab animi cum doloremque pariatur, debitis sunt quo dignissimos veritatis in ea placeat et quam doloribus illo, odio amet repellendus voluptatum tempore nemo deleniti voluptates vitae obcaecati. Iusto, delectus odio molestiae alias fuga error maiores nemo in earum. Atque animi fugiat excepturi alias, eveniet ducimus dolorum exercitationem cupiditate voluptatem aut placeat, deserunt optio! Quae laborum nulla quasi est adipisci magnam minima accusamus laudantium dolorum ipsa, porro nisi esse. Voluptas asperiores rerum iure accusantium quas. Placeat nam minus totam illo sed quia rerum iusto, obcaecati aliquid!
-          </p>
+    <Container id='about' className='bg-indigo-500/60'>
+      <section className='w-full flex flex-col items-center px-0 md:px-10 py-5'>
+        <p className='text-white font-bold uppercase'>about</p>
+        <div className='w-full grid grid-cols-1 md:grid-cols-2 items-center my-10'>
+          <div className=''>
+            <p className='text-xl text-white text-center'>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, iusto, velit facilis provident quod eligendi, vel alias beatae mollitia neque corporis. Dolores, blanditiis! Nostrum, nisi. Suscipit sit atque aperiam non saepe repellat nemo provident nobis porro inventore obcaecati iusto, asperiores similique, odit reiciendis aspernatur nesciunt nam vero fuga doloremque ad veritatis unde.
+            </p>
+          </div>
+          <div className='grid place-items-center'>
+            <img src={intro_1} alt='' className='w-1/2' />
+          </div>
         </div>
       </section>
     </Container>
     <Container  id='tokenomics'>
       <section className='w-full flex flex-col items-center py-5'>
         <p className='text-indigo-500 font-bold uppercase'>tokenomics</p>
+        <div className='w-full flex flex-wrap items-center justify-center gap-4 my-10'>
+          <Nomics name='token name' value={TOKENOMICS.name} />
+          <Nomics name='token symbol' value={TOKENOMICS.symbol} />
+          <Nomics name='token supply' value={TOKENOMICS.supply} />
+          <Nomics name='token network' value={TOKENOMICS.network} />
+          <Nomics name='contract address' value={TOKENOMICS.address} />
+        </div>
+        <button className='h-[50px] flex items-center bg-indigo-500 text-white px-4 rounded-full'>
+          view on etherscan
+        </button>
       </section>
     </Container>
     <Container id='roadmap'>

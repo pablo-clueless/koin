@@ -53,14 +53,14 @@ const TEAM_MEMBERS = [
     },
     {
         name: 'Leonanie Lambie',
-        role: 'mobile developer (android)',
+        role: 'mobile developer',
         image: 'https://images.unsplash.com/photo-1570158268183-d296b2892211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         github: 'https://github.com/pablo-clueless',
         twitter: 'https://twitter.com/pablo_clueless'
     },
     {
         name: 'Ennis Tiuit',
-        role: 'mobile developer (ios)',
+        role: 'blockchain developer',
         image: 'https://images.unsplash.com/photo-1570158268183-d296b2892211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         github: 'https://github.com/pablo-clueless',
         twitter: 'https://twitter.com/pablo_clueless'
@@ -95,6 +95,14 @@ const TEAM_MEMBERS = [
     },
 ]
 
+const TOKENOMICS = {
+    address: '0xaAbBcCdDeEfFgGhHiIjJkKlLmMnN1234567890',
+    name: 'alt koin',
+    network: 'goerli',
+    supply: 150000000,
+    symbol: 'AKN',
+}
+
 export {
     COMMUNITY_LINKS,
     FOOTER_LINKS,
@@ -104,4 +112,5 @@ export {
     ROAD_MAP,
     SPONSORS,
     TEAM_MEMBERS,
+    TOKENOMICS,
 }

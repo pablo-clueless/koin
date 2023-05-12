@@ -1,6 +1,7 @@
 import { List, X } from '@phosphor-icons/react'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 import { NAV_LINKS } from 'constant'
 
@@ -25,7 +26,7 @@ const Navbar = () => {
   return (
     <>
     {isMenuOpen && (
-      <div className='w-screen h-screen flex flex-col sm:hidden items-center bg-white fixed top-0 left-0 !z-30 px-4 py-10'>
+      <motion.div className={`w-screen h-screen flex flex-col items-center bg-white fixed top-0 !z-30 px-4 py-10 transition ${isMenuOpen ? 'left-0' : '-left-full'}`}>
         <div className='w-full flex items-center justify-end'>
           <button onClick={() => setIsMenuOpen(false)}>
             <X className='text-3xl' />
@@ -38,7 +39,7 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-      </div>
+      </motion.div>
     )}
     <nav className={`w-full flex items-center justify-between px-2 md:px-20 py-4 top-0 left-0 !z-20 ${scrolled ? 'fixed bg-gradient-to-r from-indigo-500 to-pink-500' : 'static bg-white'}`}>
       <button onClick={() => setIsMenuOpen(true)} className='flex md:hidden items-center'>
@@ -55,7 +56,7 @@ const Navbar = () => {
           </a>
         ))}
       </div>
-      <button className={`px-4 py-2 font-medium rounded-md capitalize ${scrolled ?  'bg-white text-indigo-500' : 'bg-indigo-500 text-white'}`}>
+      <button className={`h-[40px] px-4 font-medium rounded-full capitalize ${scrolled ?  'bg-white text-indigo-500' : 'bg-indigo-500 text-white'}`}>
         login
       </button>
     </nav>
