@@ -3,12 +3,13 @@ import { Suspense } from 'react'
 
 import { useConcurrentTransition } from 'hooks'
 import { About, Docs, Home, Team } from 'pages'
+import { Loader } from 'components'
 
 const Router = () => {
   const location = useConcurrentTransition()
 
   return (
-    <Suspense>
+    <Suspense fallback={<Loader />}>
       <Routes location={location}>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
