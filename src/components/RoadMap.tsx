@@ -16,7 +16,7 @@ const RoadMap = ({date, detail, feature, icon, status}:Props) => {
   return (
     <motion.div
       initial={initial}
-      whileInView={animate}
+      animate={animate}
       transition={transition}
       className='w-full md:w-[500px] flex flex-col items-center bg-white'
     >

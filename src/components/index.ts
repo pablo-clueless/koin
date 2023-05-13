@@ -1,5 +1,6 @@
 
 export { default as Backdrop } from './Backdrop'
+export { default as Chart } from './Chart'
 export { default as ErrorFallback } from './ErrorFallback'
 export { default as Footer } from './Footer'
 export { default as InfiniteRowScroll } from './InfiniteRowScroll'

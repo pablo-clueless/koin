@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-import { Footer, InfiniteRowScroll, Member, Navbar, Nomics, OSClient, RoadMap, Tab, TabPanel } from 'components'
-import { OS_CLIENTS, HERO_IMAGES, ROAD_MAP, SPONSORS, TEAM_MEMBERS, TOKENOMICS } from 'constant'
+import { Chart, Footer, InfiniteRowScroll, Member, Navbar, Nomics, OSClient, RoadMap, Tab, TabPanel } from 'components'
+import { COIN_DATA, HERO_IMAGES, OS_CLIENTS, ROAD_MAP, SPONSORS, TEAM_MEMBERS, TOKENOMICS } from 'constant'
 import { Container } from 'layouts'
 import { intro_1 } from 'assets'
 
@@ -68,7 +68,7 @@ const Home = () => {
     <Container className='w-full'>
       <InfiniteRowScroll images={SPONSORS} />
     </Container>
-    <Container id='about' className='bg-indigo-500/60'>
+    <Container id='about' className='bg-indigo-500'>
       <section className='w-full flex flex-col items-center px-0 md:px-10 py-5'>
         <p className='text-white font-bold uppercase'>about</p>
         <div className='w-full grid grid-cols-1 md:grid-cols-2 items-center my-10'>
@@ -92,10 +92,12 @@ const Home = () => {
           <Nomics name='token supply' value={TOKENOMICS.supply} />
           <Nomics name='token network' value={TOKENOMICS.network} />
         </div>
-        <div className=' my-4'></div>
-        <button className='h-[50px] flex items-center bg-indigo-500 text-white px-4 rounded-full'>
+        <button className='h-[50px] flex items-center bg-indigo-500 text-white px-4 my-4 rounded-full'>
           view on etherscan
         </button>
+        <div className='mt-5'>
+          <Chart data={COIN_DATA} />
+        </div>
       </section>
     </Container>
     <Container id='roadmap'>

@@ -1,5 +1,6 @@
 import { COMMUNITY_LINKS, HERO_IMAGES, OS_CLIENTS, ROAD_MAP } from './data'
 import { alchemy, binance, coinbase, ethereum, paradigm } from 'assets'
+import { COIN_DATA } from './graph'
 
 const NAV_LINKS = [
     {label: 'about', target: '#about'},
@@ -104,6 +105,7 @@ const TOKENOMICS = {
 }
 
 export {
+    COIN_DATA,
     COMMUNITY_LINKS,
     FOOTER_LINKS,
     HERO_IMAGES,
