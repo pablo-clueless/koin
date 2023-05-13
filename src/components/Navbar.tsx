@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 
 import { useAppContext } from 'hooks'
 import { NAV_LINKS } from 'constant'
+import { koin } from 'assets'
 
 const initial = {x: '-100%'}
 const animate = {x: 0, dur: 0.5}
@@ -65,7 +66,8 @@ const Navbar = () => {
       <button onClick={() => setIsMenuOpen(true)} className='flex md:hidden items-center'>
         <List className='text-3xl' />
       </button>
-      <Link to='/' className={`flex items-center text-2xl font-black ${scrolled ? 'text-white' : 'text-indigo-500'}`}>
+      <Link to='/' className={`flex items-center gap-1 text-2xl font-black ${scrolled ? 'text-white' : 'text-indigo-500'}`}>
+        <img src={koin} alt='koin' className='w-[30px]' />
         Koin
       </Link>
       <div className='hidden md:flex items-center gap-4'>

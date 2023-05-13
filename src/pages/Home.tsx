@@ -12,7 +12,7 @@ const transition = {type: 'spring', stiffness: 80, dumping: 5, restDelta: 0.001}
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [tab, setTab] = useState(1)
+  const [tab, setTab] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {

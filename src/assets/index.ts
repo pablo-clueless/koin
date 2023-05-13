@@ -6,7 +6,7 @@ import intro_1 from './images/intro_1.png'
 import intro_2 from './images/intro_2.png'
 import intro_3 from './images/intro_3.png'
 import intro_4 from './images/intro_4.png'
-import logo from './images/pepe.png'
+import koin from './images/koin.png'
 import paradigm from './images/paradigm.png'
 
 export {
@@ -18,6 +18,6 @@ export {
   intro_2,
   intro_3,
   intro_4,
-  logo,
+  koin,
   paradigm,
 }

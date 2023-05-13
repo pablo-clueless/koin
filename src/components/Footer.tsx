@@ -2,6 +2,7 @@ import { FormEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { FOOTER_LINKS, COMMUNITY_LINKS } from 'constant'
+import { koin } from 'assets'
 
 const Footer = () => {
   const [email, setEmail] = useState('')
@@ -16,7 +17,8 @@ const Footer = () => {
     <footer className='w-full flex flex-col items-center justify-between gap4 md:gap-10 bg-gradient-to-r from-indigo-500 to-pink-500 mt-auto px-2 md:px-20 pt-20 pb-10'>
       <div className='w-full flex flex-col items-start justify-between py-3 md:py-10 md:flex-row'>
         <div className='w-full flex flex-col items-start'>
-          <div className='flex items-center'>
+          <div className='flex items-center gap-1'>
+            <img src={koin} alt='koin' className='w-[60px] md:w-[100px]' />
             <p className='text-6xl md:text-8xl text-white font-black'>Koin</p>
           </div>
           <div className='flex flex-col mt-10 md:mt-20'>
@@ -62,6 +64,7 @@ const Footer = () => {
           <Link to='/' className=''>Terms & Conditions</Link>
         </div>
       </div>
+      {/* <div className='w-full text-sm text-white font-thin'></div> */}
     </footer>
   )
 }
