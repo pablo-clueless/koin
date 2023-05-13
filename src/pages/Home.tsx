@@ -28,7 +28,12 @@ const Home = () => {
   return (
     <>
     <Navbar />
-    <Container className='md:h-[70vh] bg-indigo-500'>
+    <Container className='md:h-[90vh] grid place-items-center bg-indigo-500 relative'>
+      <div className="absolute inset-x-0 bottom-0">
+        <svg viewBox="0 0 224 12" fill="currentColor" className="w-full -mb-1 text-white" preserveAspectRatio="none">
+          <path d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z" />
+        </svg>
+      </div>
       <section className='w-full flex flex-col md:flex-row items-center gap-4 py-20'>
         <div className='w-full md:w-1/2'>
           <p className='text-base md:text-xl text-white font-extrabold uppercase tracking-[8px]'>invest. trade. earn</p>
@@ -60,7 +65,7 @@ const Home = () => {
         </div>
       </section>
     </Container>
-    <Container className='flex items-center gap-4 overflow-hidden'>
+    <Container className='w-full'>
       <InfiniteRowScroll images={SPONSORS} />
     </Container>
     <Container id='about' className='bg-indigo-500/60'>

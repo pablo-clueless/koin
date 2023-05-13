@@ -14,7 +14,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className='w-full flex flex-col items-center justify-between gap4 md:gap-10 bg-gradient-to-r from-indigo-500 to-pink-500 mt-auto px-2 md:px-20 pt-20 pb-10'>
+    <footer className='w-full md:h-[93vh] flex flex-col items-center justify-between gap4 md:gap-10 bg-gradient-to-r from-indigo-500 to-pink-500 mt-auto px-2 md:px-20 pt-20 md:pt-40 pb-10'>
       <div className='w-full flex flex-col items-start justify-between py-3 md:py-10 md:flex-row'>
         <div className='w-full flex flex-col items-start'>
           <div className='flex items-center gap-1'>
