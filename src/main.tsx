@@ -3,8 +3,9 @@ import { BrowserRouter } from 'react-router-dom'
 import ReactDOM from 'react-dom/client'
 import React from 'react'
 
-import App from './App.tsx'
-import './index.css'
+import { AppProvider } from 'contexts'
+import App from 'App'
+import 'index.css'
 
 const client = new QueryClient()
 
@@ -12,7 +13,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={client}>
       <BrowserRouter>
-        <App />
+        <AppProvider>
+          <App />
+        </AppProvider>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>,

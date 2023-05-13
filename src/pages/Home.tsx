@@ -28,12 +28,14 @@ const Home = () => {
   return (
     <>
     <Navbar />
-    <Container className='md:h-[70vh] bg-hero bg-cover bg-center'>
+    <Container className='md:h-[70vh] bg-indigo-500'>
       <section className='w-full flex flex-col md:flex-row items-center gap-4 py-20'>
         <div className='w-full md:w-1/2'>
           <p className='text-base md:text-xl text-white font-extrabold uppercase tracking-[8px]'>invest. trade. earn</p>
           <p className='text-5xl md:text-8xl text-white font-bold mb-5'>a new era cryptocurrency</p>
-          <p className='text-gray-200 text-sm md:text-base'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae repellendus officia eos, quod impedit voluptatibus! Ex consectetur numquam commodi harum, soluta nihil vitae ducimus voluptas facere velit officiis quis neque! Hic repellat laborum fugiat dolores cupiditate fugit? Saepe, minus. Ea totam pariatur et, accusamus at vitae aliquam? Facilis, reiciendis. Nihil nemo maiores, pariatur vero dolore distinctio, numquam sint odio esse quae officia vel reiciendis quo eveniet, ratione sit officiis expedita!</p>
+          <p className='text-gray-200 text-sm md:text-base'>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae repellendus officia eos, quod impedit voluptatibus! Ex consectetur numquam commodi harum, soluta nihil vitae ducimus voluptas facere velit officiis quis neque! Hic repellat laborum fugiat dolores cupiditate fugit? Saepe, minus. Ea totam pariatur et, accusamus at vitae aliquam?
+          </p>
           <div className='w-full flex items-center gap-4 mt-5'>
             <button className='h-[40px] bg-white text-indigo-500 rounded-full px-4'>
               read whitepaper
@@ -66,7 +68,7 @@ const Home = () => {
         <p className='text-white font-bold uppercase'>about</p>
         <div className='w-full grid grid-cols-1 md:grid-cols-2 items-center my-10'>
           <div className=''>
-            <p className='text-xl text-white text-center'>
+            <p className='text-xl text-white text-center md:text-left'>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, iusto, velit facilis provident quod eligendi, vel alias beatae mollitia neque corporis. Dolores, blanditiis! Nostrum, nisi. Suscipit sit atque aperiam non saepe repellat nemo provident nobis porro inventore obcaecati iusto, asperiores similique, odit reiciendis aspernatur nesciunt nam vero fuga doloremque ad veritatis unde.
             </p>
           </div>
@@ -79,13 +81,13 @@ const Home = () => {
     <Container  id='tokenomics'>
       <section className='w-full flex flex-col items-center py-5'>
         <p className='text-indigo-500 font-bold uppercase'>tokenomics</p>
-        <div className='w-full flex flex-wrap items-center justify-center gap-4 my-10'>
+        <div className='w-full md:w-2/3 flex flex-wrap items-center justify-between'>
           <Nomics name='token name' value={TOKENOMICS.name} />
           <Nomics name='token symbol' value={TOKENOMICS.symbol} />
           <Nomics name='token supply' value={TOKENOMICS.supply} />
           <Nomics name='token network' value={TOKENOMICS.network} />
-          <Nomics name='contract address' value={TOKENOMICS.address} />
         </div>
+        <div className=' my-4'></div>
         <button className='h-[50px] flex items-center bg-indigo-500 text-white px-4 rounded-full'>
           view on etherscan
         </button>

@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import { Suspense } from 'react'
 
-import { useConcurrentTransition } from 'hooks/concurrent-transiton'
+import { useConcurrentTransition } from 'hooks'
 import { About, Docs, Home, Team } from 'pages'
 
 const Router = () => {

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import { FOOTER_LINKS, COMMUNITY_LINKS } from 'constant'
 
-
 const Footer = () => {
   const [email, setEmail] = useState('')
 

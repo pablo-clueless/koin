@@ -3,11 +3,16 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
+import { useAppContext } from 'hooks'
 import { NAV_LINKS } from 'constant'
+
+const initial = {x: '-100%'}
+const animate = {x: 0, dur: 0.5}
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const {loggedIn, login} = useAppContext()
 
   const handleScroll = () => {
     const offset = window.scrollY
@@ -15,6 +20,21 @@ const Navbar = () => {
       setScrolled(true)
     } else {
       setScrolled(false)
+    }
+  }
+
+  const connectWallet = async() => {
+    try {
+      if(window.ethereum) {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+        const account = accounts[0]
+        const user = { address: account }
+        login(user)
+      } else {
+        alert('Metamask is not installed!')
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -26,13 +46,13 @@ const Navbar = () => {
   return (
     <>
     {isMenuOpen && (
-      <motion.div className={`w-screen h-screen flex flex-col items-center bg-white fixed top-0 !z-30 px-4 py-10 transition ${isMenuOpen ? 'left-0' : '-left-full'}`}>
+      <motion.div initial={initial} whileInView={animate} className='w-screen h-screen flex flex-col items-center bg-white fixed top-0 left-0 !z-30 px-4 py-10'>
         <div className='w-full flex items-center justify-end'>
           <button onClick={() => setIsMenuOpen(false)}>
             <X className='text-3xl' />
           </button>
         </div>
-        <div className='w-full flex flex-col items-center gap-4 my-auto'>
+        <div className='w-full flex flex-col items-center gap-5 my-auto'>
           {NAV_LINKS.map((link, index) => (
             <a key={index} href={link.target} className='text-xl text-indigo-500 font-medium capitalize' onClick={() => setIsMenuOpen(false)}>
               {link.label}
@@ -56,8 +76,8 @@ const Navbar = () => {
           </a>
         ))}
       </div>
-      <button className={`h-[40px] px-4 font-medium rounded-full capitalize ${scrolled ?  'bg-white text-indigo-500' : 'bg-indigo-500 text-white'}`}>
-        login
+      <button onClick={() => connectWallet()} className={`h-[40px] px-4 font-medium rounded-full capitalize ${scrolled ?  'bg-white text-indigo-500' : 'bg-indigo-500 text-white'}`}>
+        {loggedIn ? 'wallet connected' : 'connect wallet'}
       </button>
     </nav>
     </>

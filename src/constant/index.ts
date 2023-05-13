@@ -98,7 +98,7 @@ const TEAM_MEMBERS = [
 const TOKENOMICS = {
     address: '0xaAbBcCdDeEfFgGhHiIjJkKlLmMnN1234567890',
     name: 'alt koin',
-    network: 'goerli',
+    network: 'polygon',
     supply: 150000000,
     symbol: 'AKN',
 }

@@ -5,9 +5,9 @@ interface Props {
 
 const Nomics = ({name, value}:Props) => {
   return (
-    <div className='w-full md:w-fit min-w-[300px] flex flex-col items-center border-2 rounded-md p-4'>
-      <p className='text-indigo-500 font-bold'>{name}</p>
-      <p className='textsm md:text-xl font-medium mt-3'>{value}</p>
+    <div className='w-fit flex flex-col items-center p-4'>
+      <p className='text-xl font-medium text-indigo-500 uppercase'>{value}</p>
+      <p className='text-gray-400 font-bold mt-3'>{name}</p>
     </div>
   )
 }
