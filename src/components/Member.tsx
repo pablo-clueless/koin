@@ -10,7 +10,7 @@ interface Props {
 
 const Member = ({github, image, name, role, twitter}:Props) => {
   return (
-    <div className='w-full cursor-pointer relative'>
+    <div className='w-full cursor-pointer relative overflow-hidden'>
       <img src={image} alt={name} className='w-full aspect-[1/1] object-cover' />
       <div className='w-full h-full bg-black/40 hover:bg-transparent flex flex-col items-start justify-end p-4 absolute top-0 left-0'>
         <p className='text-xl text-white font-medium'>{name}</p>

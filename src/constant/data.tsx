@@ -1,14 +1,13 @@
-import { AndroidLogo, AppleLogo, ChalkboardTeacher, DiscordLogo, FacebookLogo, InstagramLogo, LinuxLogo, Receipt, RedditLogo, Rocket, RocketLaunch, TelegramLogo, TwitterLogo, WindowsLogo } from '@phosphor-icons/react'
+import { AndroidLogo, AppleLogo, ChalkboardTeacher, DiscordLogo, FacebookLogo, GithubLogo, InstagramLogo, LinuxLogo, Receipt, Rocket, RocketLaunch, TwitterLogo, WindowsLogo } from '@phosphor-icons/react'
 
 import { intro_1, intro_2, intro_3, intro_4 } from 'assets'
 
 export const COMMUNITY_LINKS = [
     {label: <DiscordLogo />, link: 'https://discord.gg/' },
-    {label: <FacebookLogo />, link: 'https://facebook.com/' },
-    {label: <InstagramLogo />, link: 'https://instagram.com/' },
-    {label: <RedditLogo />, link: 'https://reddit.com/' },
-    {label: <TelegramLogo />, link: 'https://t.me/' },
-    {label: <TwitterLogo />, link: 'https://twitter.com/' },
+    {label: <FacebookLogo />, link: 'https://facebook.com/pablo.clueless' },
+    {label: <InstagramLogo />, link: 'https://instagram.com/pablo_clueless' },
+    {label: <GithubLogo />, link: 'https://github.com/pablo-clueless' },
+    {label: <TwitterLogo />, link: 'https://twitter.com/pablo_clueless' },
 ]
 
 export const HERO_IMAGES = [

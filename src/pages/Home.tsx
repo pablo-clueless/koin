@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-import { Chart, Footer, InfiniteRowScroll, Member, Navbar, Nomics, OSClient, RoadMap, Tab, TabPanel } from 'components'
+import { Chart, Cookie, Footer, InfiniteRowScroll, Member, Navbar, Nomics, OSClient, RoadMap, Tab, TabPanel } from 'components'
 import { COIN_DATA, HERO_IMAGES, OS_CLIENTS, ROAD_MAP, SPONSORS, TEAM_MEMBERS, TOKENOMICS } from 'constant'
 import { Container } from 'layouts'
 import { intro_1 } from 'assets'
@@ -42,10 +42,10 @@ const Home = () => {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae repellendus officia eos, quod impedit voluptatibus! Ex consectetur numquam commodi harum, soluta nihil vitae ducimus voluptas facere velit officiis quis neque! Hic repellat laborum fugiat dolores cupiditate fugit? Saepe, minus. Ea totam pariatur et, accusamus at vitae aliquam?
           </p>
           <div className='w-full flex items-center gap-4 mt-5'>
-            <button className='h-[40px] bg-white text-indigo-500 rounded-full px-4'>
+            <button className='h-[40px] bg-white text-indigo-500 border border-white rounded-full px-4'>
               read whitepaper
             </button>
-            <button className='h-[40px] bg-indigo-500 text-white rounded-full px-4'>
+            <button className='h-[40px] bg-indigo-500 text-white border border-white rounded-full px-4'>
               view on etherscan
             </button>
           </div>
@@ -92,19 +92,19 @@ const Home = () => {
           <Nomics name='token supply' value={TOKENOMICS.supply} />
           <Nomics name='token network' value={TOKENOMICS.network} />
         </div>
-        <button className='h-[50px] flex items-center bg-indigo-500 text-white px-4 my-4 rounded-full'>
-          view on etherscan
-        </button>
-        <div className='mt-5'>
+        <div className='my-5'>
           <Chart data={COIN_DATA} />
         </div>
+        <button className='h-[50px] flex items-center bg-indigo-500 text-white px-4 mt-4 rounded-full'>
+          view on etherscan
+        </button>
       </section>
     </Container>
     <Container id='roadmap'>
       <section className='w-full flex flex-col items-center py-5 overflow-hidden'>
         <p className='text-indigo-500 font-bold uppercase'>roadmap</p>
         <div className='flex flex-col items-center gap-10 my-10'>
-          <div className='flex items-center gap-4'>
+          <div className='flex items-center gap-4 mb-4 md:mb-0'>
             {ROAD_MAP.map((_, index) => (
               <Tab key={index} index={index} onClick={() => setTab(index)} value={tab} />
             ))}
@@ -138,6 +138,7 @@ const Home = () => {
       </section>
     </Container>
     <Footer />
+    <Cookie />
     </>
   )
 }
